@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<h1>Hello World !</h1>
-<jsp:include page="common/header/header.jsp"></jsp:include>
-<jsp:include page="common/nav/nav.jsp"></jsp:include>
+<h1>nav.jsp 입니다.</h1>
 </body>
 </html>
