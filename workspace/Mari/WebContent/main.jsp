@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<h1>Hello World !</h1>
 <jsp:include page="common/header/header.jsp"></jsp:include>
 <jsp:include page="common/nav/nav.jsp"></jsp:include>
 </body>
