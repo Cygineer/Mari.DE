@@ -8,7 +8,8 @@
 </head>
 <body>
 
-<jsp:include page="common/header/header.jsp"></jsp:include>
-<jsp:include page="common/nav/nav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/common/header/header.jsp"></jsp:include><br><br>
+<jsp:include page="/WEB-INF/common/nav/nav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/common/slide/slide.jsp"></jsp:include>
 </body>
 </html>
