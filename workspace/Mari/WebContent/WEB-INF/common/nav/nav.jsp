@@ -7,9 +7,12 @@
 <title>Insert title here</title>
 <style type="text/css">
 
- body {
-	margin: 0;
- }
+html, body{
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
 
  .nav-container {
  	flex-direction: row;
@@ -61,11 +64,14 @@
 	<nav>
 		<ul class="nav-container">
 			<li class="nav-item"><a href="#">New5%</a></li>
+			<li class="nav-item"><a href="#">All</a></li>
 			<li class="nav-item"><a href="#">Best10</a></li>
 			<li class="nav-item"><a href="#">Earring</a></li>
 			<li class="nav-item"><a href="#">Necklace</a></li>
 			<li class="nav-item"><a href="#">Bracelet</a></li>
 			<li class="nav-item"><a href="#">Ring</a></li>
+			<li class="nav-item"><a href="#">Event</a></li>
+			<li class="nav-item"><a href="#">Q&A</a></li>
 		</ul>
 	</nav>
 

@@ -11,6 +11,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style type="text/css">
 
+html, body{
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+
 .carousel-inner img {
 	-webkit-filter: grayscale(30%);
 	width: 35%;
