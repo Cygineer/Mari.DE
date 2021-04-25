@@ -7,39 +7,49 @@
 <title>Insert title here</title>
 <style type="text/css">
 
-#topnav{/* 카테고리 네비바에 마우스오버시 효과 */
-		background-color: orange;
-		-webkit-filter: grayscale(60%);
-		margin: auto;
-		
-	}
-	
-	#topnav a{/* 카테고리 네비바 안의 텍스트수정*/
-	
-		flex-direction:row;
-		padding-top:10px;
-		text-decoration: none;
-		font-size: 17px;
-		display: block; 
-		width: 150px;
-		height: 40px;
-		text-align: center;
-		
-	}
-	
-	#topnav li {
-		margin: 0 0 0 0;
-		padding: 0 0 0 0;
-		border: 0;
-		float: left;
-	}
-	#topnav a span {
-		display: block; 
-	}
-	
-	#topnav a:hover {
-		color: orange;
-	}
+ body {
+	margin: 0;
+ }
+
+ .nav-container {
+ 	flex-direction: row;
+ 	width: 100%;
+ 	margin: 0;/*쓸데없는공백제거*/
+ 	padding: 0;/*쓸데없는공백제거*/
+ 	background-color: orange;
+ 	list-style-type: none;/*목록기호제거*/
+ 	text-align: center;
+ }
+ 
+ .nav-item {
+ 	padding: 15px;
+ 	
+ 	cursor: pointer;
+ }
+ 
+ .nav-item a {
+ 	text-align: center;
+ 	text-decoration: none;/*밑줄없앰*/
+ 	color: white;
+ }
+ 
+ .nav-item:hover {
+}
+
+ .nav-container li {
+ 	display: inline;
+ }
+ 
+  .nav-container a {
+ 	display: inline-block;
+ 	padding: 15px;
+ }
+ 
+
+ 
+ 
+ 
+ 
 	
 
 </style>
@@ -48,16 +58,16 @@
 <body>
 
 
-
-	<ul id="topnav" class="nav justify-content-around bg-light">
-	 	<li class="nav-item"> <a class="nav-link" href="#"><span></span>New5%</a> </li>
-		<li class="nav-item"> <a class="nav-link" href="#"><span></span>Best10</a> </li>
-	    <li class="nav-item"> <a class="nav-link" href="#"><span></span>Earring</a> </li>
-	    <li class="nav-item"> <a class="nav-link" href="#"><span></span>Necklace</a> </li>
-	    <li class="nav-item"> <a class="nav-link" href="#"><span></span>Bracelet</a> </li>
-	    <li class="nav-item"> <a class="nav-link" href="#"><span></span>Ring</a> </li>
-	</ul>
-
+	<nav>
+		<ul class="nav-container">
+			<li class="nav-item"><a href="#">New5%</a></li>
+			<li class="nav-item"><a href="#">Best10</a></li>
+			<li class="nav-item"><a href="#">Earring</a></li>
+			<li class="nav-item"><a href="#">Necklace</a></li>
+			<li class="nav-item"><a href="#">Bracelet</a></li>
+			<li class="nav-item"><a href="#">Ring</a></li>
+		</ul>
+	</nav>
 
 </body>
 </html>
