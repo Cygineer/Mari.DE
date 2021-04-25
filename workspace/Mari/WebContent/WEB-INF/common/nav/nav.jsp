@@ -20,6 +20,7 @@ html, body{
  	margin: 0;/*쓸데없는공백제거*/
  	padding: 0;/*쓸데없는공백제거*/
  	background-color: orange;
+ 	filter: grayscale(40%);
  	list-style-type: none;/*목록기호제거*/
  	text-align: center;
  }

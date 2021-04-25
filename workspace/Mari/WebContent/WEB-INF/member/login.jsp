@@ -3,10 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ 
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
@@ -23,13 +26,15 @@ h1{
     font-family: 'Josefin Sans', sans-serif;
     text-transform:capitalize;
     text-align:center;
-    color:#FFF;
-    background:orange;
+    color:gray;
+    filter: grayscale(40%);
     padding:25px 0px;
 }
 
 
 label{
+	color:gray;
+    filter: grayscale(40%);
     font-weight:400;
     font-size:15px;
 }
@@ -45,7 +50,8 @@ label{
 
 
 .btn{ 
-    background: #72d6f5;
+    background: orange;
+    filter: grayscale(40%);
     color: #FFF;
     border-radius: 6px;
     margin: 0 auto;
@@ -67,6 +73,10 @@ label{
     font-size:16px;
 }
 
+.forgot a{
+	color: gray;
+	filter: grayscale(40%);
+}
 
 
 
@@ -76,6 +86,54 @@ label{
 
 
 </style>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	//form 서브밋
+	$("form").on("submit",function(){
+		var userid = $("#userid").val();
+		var password = $("#password").val();
+			if (userid.length==0) {
+				swal({
+					  title: 'Read the alert!',
+					  text: '아이디를 확인해주세요',
+					  button: {
+					  text: "OK",
+					  value: true,
+					  visible: true,
+					  className: "btn btn-default"
+					  }
+					  })//end swal
+				$("#userid").focus();
+				return false;					  
+			}else if (password.length==0) {
+				swal({
+					  title: 'Read the alert!',
+					  text: '비밀번호를 확인해주세요',
+					  button: {
+					  text: "OK",
+					  value: true,
+					  visible: true,
+					  className: "btn btn-default"
+					  }
+					  })//end swal
+				return false;
+			}
+	});//end submit
+	
+	
+	
+	
+	
+});//end fn
+
+
+
+
+
+
+</script>
 </head>
 <body>
 
@@ -86,13 +144,13 @@ label{
             
                 <h1>MARIN.DE</h1> 
             
-               <form role="form">
+               <form action="LoginServlet" role="form">
         		   <div class="row">
         		          
     			    	<div class="col-lg-12 col-xs-12">
-    			    	    <label>Email</label>
+    			    	    <label>Userid</label>
     			    	    <div class="form-group">
-    			    			<input type="email" name="email" id="email" class="form-control" placeholder="">
+    			    			<input type="userid" name="userid" id="userid" class="form-control" placeholder="">
     			    		</div>
     			    	</div>
     			    	
@@ -111,7 +169,8 @@ label{
     					
     					<div class="col-lg-12 col-xs-12">
         					<div class="forgot">
-        				    	<p>Forgot Password or Email ?</p>
+        				    	<p>Forgot Password or Email ?    <a href="">click here!</a></p>
+        				    	
         					</div>
     					</div>
     						
