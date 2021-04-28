@@ -53,7 +53,7 @@ div.topMenu { /* 헤더 탑메뉴 우측상단으로 수정 */
 
 .topMenu li {
 	list-style: none;
-	padding-right:35px;
+	padding-right:20px;
 	display: inline;
 }
 
@@ -110,6 +110,7 @@ div fieldset img{
 		<ul>
 			<li><a href=MainServlet>Home</a></li>
 			<li><a href="LoginUIServlet">Login</a></li>
+			<li><a href="JoinUIServlet">Join</a></li>
 			<li><a href="#">Mypage</a></li>
 			<li><a href="#">Cart(3)</a></li>
 			<li>

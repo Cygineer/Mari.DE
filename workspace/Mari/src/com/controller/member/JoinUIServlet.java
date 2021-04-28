@@ -8,21 +8,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class JoinUIServlet
  */
-@WebServlet("/LoginUIServlet")
-public class LoginUIServlet extends HttpServlet {
+@WebServlet("/JoinUIServlet")
+public class JoinUIServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
+   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("join.jsp");
 	
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
