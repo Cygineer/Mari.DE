@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>♡ MariN.De ♡</title>
 </head>
 <body>
 
 <jsp:include page="/WEB-INF/common/header/header.jsp"></jsp:include><br><br>
 <jsp:include page="/WEB-INF/common/nav/nav.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/common/slide/slide2.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/common/slide/slide.jsp"></jsp:include>
 </body>
 </html>

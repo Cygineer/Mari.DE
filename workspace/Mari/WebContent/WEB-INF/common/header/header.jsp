@@ -39,6 +39,10 @@ header { /*헤더 사이즈 늘림 */
 	margin-left: auto;
 	margin-right: auto;
 }
+.logo a{
+	position:relative;
+	right: 26px;
+}
 
 
 
