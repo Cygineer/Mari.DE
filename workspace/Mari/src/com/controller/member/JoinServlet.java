@@ -14,25 +14,22 @@ import javax.servlet.http.HttpServletResponse;
 public class JoinServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public JoinServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	
+		String userid = request.getParameter("userid");
+		String password = request.getParameter("password");
+		String password2 = request.getParameter("password2");
+		String username = request.getParameter("username");
+		String birth = request.getParameter("birth");
+		String phone = request.getParameter("phone");
+		String email = request.getParameter("email");
+
+		System.out.println(userid+password+password2+username+birth+phone+email);
+	
+	
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
