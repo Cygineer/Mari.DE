@@ -3,12 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
@@ -20,11 +28,13 @@
 	font-family: 'Josefin Sans', sans-serif;
 	background: #f4f4f4;
 	padding: 70px 0px;
+	width: auto;
+	height: auto;
 }
 
 h1 {
 	position: relative;
-	font-size:25px;
+	font-size: 25px;
 	font-weight: 600;
 	font-family: 'Josefin Sans', sans-serif;
 	text-transform: capitalize;
@@ -48,26 +58,27 @@ label {
 	box-shadow: none;
 	color: #565656;
 	font-size: 14px;
-	padding: 30px 10px;
-	margin-bottom: 0px;
+	padding: 20px 10px;
+	margin-bottom: 10px;
 	border: 1px solid #f1f1f1;
-	
 }
 
-.inner-form {
+ .inner-form {
 	position: relative;
-	left: 36px;
+	left: 78px;
 }
 
-
-.form-group input{
+.form-group input {
 	width: 400px;
 	height: 3px;
 }
 
+input{
+	height: 5px;
+}
 
 .btn {
-	position:relative;
+	position: relative;
 	background: orange;
 	filter: grayscale(40%);
 	color: #FFF;
@@ -86,49 +97,42 @@ label {
 	border: 2px solid #24acb3;
 }
 
-.forgot {
-	text-align: center;
-	margin-top: 30px;
-	font-size: 16px;
-}
-
-.forgot a {
-	color: gray;
-	filter: grayscale(40%);
-}
-
-
-hr{
+hr {
 	height: 20px;
 }
 
-
-.agree{
+#result{
+	font-size: 10px;
+	color: red;
+}
+/* 
+.agree {
 	border-bottom: 1px solid;
-	padding-right:260px; 
-	padding-top:20px;
+	padding-right: 260px;
+	padding-top: 20px;
 	padding-bottom: 10px;
 }
-.agree2{
+
+.agree2 {
 	border-bottom: 1px solid;
-	padding-top:20px;
+	padding-top: 20px;
 	padding-bottom: 10px;
 }
-.list{
-	padding-top: 20px;
-}
-.list2{
+
+.list {
 	padding-top: 20px;
 }
 
+.list2 {
+	padding-top: 20px;
+}
 
-.agreeform{
+.agreeform {
 	color: gray;
 	filter: grayscale(40%);
 	font-weight: 400;
 	font-size: 15px;
-}
-
+} */
 
 
 </style>
@@ -139,11 +143,11 @@ $(document).ready(function() {
 	//form 서브밋
 	$("form").on("submit", function() {
 		var userid = $("#userid").val();
-		var password = $("#password").val();
-		if (userid.length == 0) {
+		var passwd = $("#passwd").val();
+		if (userid.length == 0 || passwd.length == 0 || username.length == 0 || birth.length == 0 || phone.length == 0 || email.length == 0) {
 			swal({
 				title : 'Read the alert!',
-				text : '아이디를 확인해주세요',
+				text : '내용을 확인해주세요',
 				button : {
 					text : "OK",
 					value : true,
@@ -151,22 +155,27 @@ $(document).ready(function() {
 					className : "btn btn-default"
 				}
 			})//end swal
-			$("#userid").focus();
+			$(this).focus();
 			return false;
-		} else if (password.length == 0) {
-			swal({
-				title : 'Read the alert!',
-				text : '비밀번호를 확인해주세요',
-				button : {
-					text : "OK",
-					value : true,
-					visible : true,
-					className : "btn btn-default"
-				}
-			})//end swal
-			return false;
-		}
+		}//end if
 	});//end submit
+	
+	$(passwd2).on("mouseout",function(){
+		var pw = $("#passwd").val();
+		var pw2 = $(this).val();
+		var mesg = "";
+		if (pw != pw2) {
+			mesg = "비밀번호를 확인해주세요"
+			$(this).focus();
+		}
+			$("#result").text(mesg);
+	});//end keyup
+	
+	
+	
+	
+	
+	
 
 });//end fn
 </script>
@@ -193,15 +202,16 @@ $(document).ready(function() {
 
 							<div class="col-lg-12 col-xs-12">
 								<div class="form-group">
-									<input type="password" name="password" id="password"
+									<input type="password" name="passwd" id="passwd"
 										class="form-control" placeholder="비밀번호">
 								</div>
 							</div>
 
 							<div class="col-lg-12 col-xs-12">
 								<div class="form-group">
-									<input type="password" name="password2" id="password2"
-										class="form-control" placeholder="비밀번호 재확인 ">
+									<input type="password" name="passwd2" id="passwd2"
+										class="form-control" placeholder="비밀번호 확인 ">
+										 <span id='result'></span>
 								</div>
 							</div>
 
@@ -212,73 +222,68 @@ $(document).ready(function() {
 										class="form-control" placeholder="이름">
 								</div>
 							</div>
-							
+
 							<div class="col-lg-12 col-xs-12">
-							
+
 								<!-- BIRTH_YY -->
 								<div class="form-group">
-									<input type="text" name="birth" id="birth"
-										class="form-control" maxlength="6" placeholder="생년월일(6자)">
+									<input type="text" name="birth" id="birth" class="form-control"
+										maxlength="6" placeholder="생년월일(6자)">
 								</div>
-								
-								
+
+
 							</div>
-							
+
 							<div class="col-lg-12 col-xs-12">
 								<div class="form-group">
-									<input type="text" name="phone" id="phone"
-										class="form-control" maxlength="11" placeholder="휴대전화">
+									<input type="text" name="phone" id="phone" class="form-control"
+										maxlength="11" placeholder="휴대전화 ( ' - '제외 )">
 								</div>
 							</div>
-							
+
 							<div class="col-lg-12 col-xs-12">
 								<div class="form-group">
-									<input type="text" name="email" id="email"
-										class="form-control" placeholder="이메일(선택)">
+									<input type="text" name="email" id="email" class="form-control"
+										placeholder="이메일">
 								</div>
 							</div>
-							
-							<!-- 약관동의 -->							
-							<div class="col-lg-12 col-xs-12">
+
+							<!-- 약관동의 -->
+							<!-- <div class="col-lg-12 col-xs-12">
 								<div class="agreeform">
-								<table>
-								
-								
-								<tr>
-									<td class="agree">약관동의&nbsp;</td>
-									<td class="agree2">
-										<span class="custom-checkbox">
-											전체동의
-											<input type="checkbox" id="selectAll"/>
-											<label for="selectAll"></label>
-										</span>
-									</td>
-								</tr>
-								
-								<tr>
-									<td class="list">14세 이상입니다.(필수)</td>
-									<td class="list2">
-										<span class="custom-checkbox">
-											<input type="checkbox" id="selectAll"/>
-											<label for="selectAll"></label>
-										</span>
-									</td>
-								</tr>
-								
-								</table>
+									<table>
+
+
+										<tr>
+											<td class="agree">약관동의&nbsp;</td>
+											<td class="agree2"><span class="custom-checkbox">
+													전체동의 <input type="checkbox" id="selectAll" /> <label
+													for="selectAll"></label>
+											</span></td>
+										</tr>
+
+										<tr>
+											<td class="list">14세 이상입니다.(필수)</td>
+											<td class="list2"><span class="custom-checkbox">
+													<input type="checkbox" id="selectAll" /> <label
+													for="selectAll"></label>
+											</span></td>
+										</tr>
+
+									</table>
 								</div>
-							</div>
+							</div> -->
 							<!-- 약관동의 끝 -->
-							
-							
-							
+
+
+
 							<div class="col-lg-12 col-xs-12">
 								<button type="submit" class="btn btn-default">
 									<span>회원가입</span>
 								</button>
 							</div>
-							
-							
+
+
 
 
 						</div>
