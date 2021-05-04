@@ -118,8 +118,31 @@ label {
 				return false;
 			}
 		});//end submit
+		
+		function nologin() {
+			swal({
+				text : '아이디 및 비밀번호를 확인해주세요',
+				button : {
+					text : "OK",
+					value : true,
+					visible : true,
+					className : "btn btn-default"
+				}
+			})//end swal
 
+	<%
+		String nologin = (String)session.getAttribute("nologin");
+		if(nologin == null){
+	%>
+	<%
+	}
+	%>
+		
+		
+		
 	});//end fn
+	
+
 </script>
 </head>
 <body>
@@ -142,7 +165,7 @@ label {
 
 							<div class="col-lg-12 col-xs-12">
 								<div class="form-group">
-									<input type="password" name="password" id="password"
+									<input type="password" name="passwd" id="passwd"
 										class="form-control" placeholder="비밀번호를 입력하세요">
 								</div>
 							</div>

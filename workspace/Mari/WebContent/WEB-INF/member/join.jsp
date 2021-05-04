@@ -171,7 +171,7 @@ $(document).ready(function() {
 		if (userid.length == 0 || passwd.length == 0 || username.length == 0 || birth.length == 0 || phone.length == 0 || email.length == 0) {
 			swal({
 				title : 'Read the alert!',
-				text : '내용을 확인해주세요',
+				text : '내용을 입력해주세요',
 				button : {
 					text : "OK",
 					value : true,
