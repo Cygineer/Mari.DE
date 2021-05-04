@@ -8,7 +8,7 @@ import com.dto.MemberDTO;
 
 public class MemberService {
 
-	MemberDAO dao;
+	MemberDAO dao = new MemberDAO();
 	
 	public int memberAdd(MemberDTO dto) {
 		SqlSession session = MySqlSessionFactory.getSession();

@@ -10,20 +10,15 @@ public class MemberDTO {
 	String addr2;
 	String phone;
 	String email;
+	String birth;
 	
 	public MemberDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public String toString() {
-		return "MemberDTO [userid=" + userid + ", passwd=" + passwd + ", username=" + username + ", post=" + post
-				+ ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone=" + phone + ", email=" + email + "]";
-	}
-
 	public MemberDTO(String userid, String passwd, String username, String post, String addr1, String addr2,
-			String phone, String email) {
+			String phone, String email, String birth) {
 		super();
 		this.userid = userid;
 		this.passwd = passwd;
@@ -33,6 +28,14 @@ public class MemberDTO {
 		this.addr2 = addr2;
 		this.phone = phone;
 		this.email = email;
+		this.birth = birth;
+	}
+
+	@Override
+	public String toString() {
+		return "MemberDTO [userid=" + userid + ", passwd=" + passwd + ", username=" + username + ", post=" + post
+				+ ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone=" + phone + ", email=" + email + ", birth=" + birth
+				+ "]";
 	}
 
 	public String getUserid() {
@@ -98,6 +101,15 @@ public class MemberDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public String getBirth() {
+		return birth;
+	}
+
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+
 	
 	
 }

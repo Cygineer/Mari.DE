@@ -3,20 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
-<link
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<link
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-	rel="stylesheet">
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-<script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
@@ -61,6 +54,37 @@ label {
 	padding: 20px 10px;
 	margin-bottom: 10px;
 	border: 1px solid #f1f1f1;
+}
+
+.addr-control{
+	background-color: white;
+	box-shadow: none;
+	color: #565656;
+	font-size: 14px;
+	padding: 20px 0px ;
+	margin-bottom: 5px;
+	border: 1px solid #f1f1f1;
+	width: 200px;
+	height: 10px;
+}
+
+.addr-control2{
+	background-color: white;
+	box-shadow: none;
+	color: #565656;
+	font-size: 14px;
+	padding: 20px 0px ;
+	margin-bottom: 5px;
+	border: 1px solid #f1f1f1;
+	width: 400px;
+	height: 10px;
+}
+
+.addr-group button{
+	position:relative; 
+	top:6px;
+	width: 80px;
+	font-size: 10px;
 }
 
  .inner-form {
@@ -171,6 +195,8 @@ $(document).ready(function() {
 			$("#result").text(mesg);
 	});//end keyup
 	
+	///////////////////////////////////////////////////////////////////////
+	
 	
 	
 	
@@ -195,22 +221,19 @@ $(document).ready(function() {
 							<div class="col-lg-12 col-xs-12">
 								<label>가입정보 입력</label>
 								<div class="form-group">
-									<input type="text" name="userid" id="userid"
-										class="form-control" placeholder="아이디">
+									<input type="text" name="userid" id="userid" class="form-control" placeholder="아이디">
 								</div>
 							</div>
 
 							<div class="col-lg-12 col-xs-12">
 								<div class="form-group">
-									<input type="password" name="passwd" id="passwd"
-										class="form-control" placeholder="비밀번호">
+									<input type="password" name="passwd" id="passwd" class="form-control" placeholder="비밀번호">
 								</div>
 							</div>
 
 							<div class="col-lg-12 col-xs-12">
 								<div class="form-group">
-									<input type="password" name="passwd2" id="passwd2"
-										class="form-control" placeholder="비밀번호 확인 ">
+									<input type="password" name="passwd2" id="passwd2" class="form-control" placeholder="비밀번호 확인 ">
 										 <span id='result'></span>
 								</div>
 							</div>
@@ -218,8 +241,7 @@ $(document).ready(function() {
 							<div class="col-lg-12 col-xs-12">
 								<!-- <label>생년월일</label> -->
 								<div class="form-group">
-									<input type="text" name="username" id="username"
-										class="form-control" placeholder="이름">
+									<input type="text" name="username" id="username" class="form-control" placeholder="이름">
 								</div>
 							</div>
 
@@ -227,8 +249,7 @@ $(document).ready(function() {
 
 								<!-- BIRTH_YY -->
 								<div class="form-group">
-									<input type="text" name="birth" id="birth" class="form-control"
-										maxlength="6" placeholder="생년월일(6자)">
+									<input type="text" name="birth" id="birth" class="form-control"	maxlength="6" placeholder="생년월일(6자)">
 								</div>
 
 
@@ -236,17 +257,46 @@ $(document).ready(function() {
 
 							<div class="col-lg-12 col-xs-12">
 								<div class="form-group">
-									<input type="text" name="phone" id="phone" class="form-control"
-										maxlength="11" placeholder="휴대전화 ( ' - '제외 )">
+									<input type="text" name="phone" id="phone" class="form-control" maxlength="11" placeholder="휴대전화 ( ' - '제외 )">
 								</div>
 							</div>
 
 							<div class="col-lg-12 col-xs-12">
 								<div class="form-group">
-									<input type="text" name="email" id="email" class="form-control"
-										placeholder="이메일">
+									<input type="text" name="email" id="email" class="form-control" placeholder="이메일">
 								</div>
 							</div>
+<!-- =============================================================================================================== -->
+						<!-- 도로명주소 -->
+						<div class="col-lg-12 col-xs-12">
+								<div class="addr-group">
+									<table>
+									<tr>
+									<td>
+									<input type="text" id="sample4_postcode" name="post" placeholder="우편번호" class="addr-control">
+									<button type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" name="post"class="addr-control2">우편번호 찾기</button><br>
+									<input type="text" id="sample4_roadAddress" name="addr1" placeholder="도로명주소" class="addr-control2"><br>
+										<span id="guide" style="color:#999;display:none"></span>
+									<input type="text" id="sample4_detailAddress" name="addr2" placeholder="상세주소" class="addr-control2"> 
+									</td>										
+									</tr>
+									</table>
+								</div>
+							</div>
+		
+
+
+
+
+
+
+
+
+
+
+<!-- =============================================================================================================== -->
+
+							
 
 							<!-- 약관동의 -->
 							<!-- <div class="col-lg-12 col-xs-12">
@@ -294,5 +344,59 @@ $(document).ready(function() {
 			</div>
 		</div>
 	</div>
+
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script>
+    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+    function sample4_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 도로명 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var fullRoadAddr = data.roadAddress; // 도로명 주소 변수
+                var extraRoadAddr = ''; // 도로명 조합형 주소 변수
+
+                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraRoadAddr += data.bname;
+                }
+                // 건물명이 있고, 공동주택일 경우 추가한다.
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                // 도로명, 지번 조합형 주소가 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                if(extraRoadAddr !== ''){
+                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+                }
+                // 도로명, 지번 주소의 유무에 따라 해당 조합형 주소를 추가한다.
+                if(fullRoadAddr !== ''){
+                    fullRoadAddr += extraRoadAddr;
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample4_postcode').value = data.zonecode; //5자리 새우편번호 사용
+                document.getElementById('sample4_roadAddress').value = fullRoadAddr;
+                document.getElementById('sample4_jibunAddress').value = data.jibunAddress;
+
+                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+                if(data.autoRoadAddress) {
+                    //예상되는 도로명 주소에 조합형 주소를 추가한다.
+                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+                    document.getElementById('guide').innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+
+                } else if(data.autoJibunAddress) {
+                    var expJibunAddr = data.autoJibunAddress;
+                    document.getElementById('guide').innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+
+                } else {
+                    document.getElementById('guide').innerHTML = '';
+                }
+            }
+        }).open();
+    }
+</script>	
 </body>
 </html>
