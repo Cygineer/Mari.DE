@@ -86,6 +86,13 @@ label {
 <script type="text/javascript">
 
 	$(document).ready(function() {
+		
+		<%
+			String mesg = (String)session.getAttribute("mesg");
+			System.out.println(mesg);
+		%>
+		
+		
 
 		//form 서브밋
 		$("form").on("submit", function() {
@@ -104,7 +111,7 @@ label {
 				})//end swal
 				$("#userid").focus();
 				return false;
-			} else if (password.length == 0) {
+			}if (password.length == 0) {
 				swal({
 					title : 'Read the alert!',
 					text : '비밀번호를 확인해주세요',
@@ -116,28 +123,21 @@ label {
 					}
 				})//end swal
 				return false;
-			}
+			}if(<%=mesg%>){
+		
+				swal({
+					title : 'Read the alert!',
+					text : '아이디 및 비밀번호를 확인하세요!',
+					button : {
+						text : "OK",
+						value : true,
+						visible : true,
+						className : "btn btn-default"
+					}
+				})//end swal
+				return false;
+			
 		});//end submit
-		
-		function nologin() {
-			swal({
-				text : '아이디 및 비밀번호를 확인해주세요',
-				button : {
-					text : "OK",
-					value : true,
-					visible : true,
-					className : "btn btn-default"
-				}
-			})//end swal
-
-	<%
-		String nologin = (String)session.getAttribute("nologin");
-		if(nologin == null){
-	%>
-	<%
-	}
-	%>
-		
 		
 		
 	});//end fn
@@ -146,6 +146,8 @@ label {
 </script>
 </head>
 <body>
+	
+
 	<div class="login">
 		<div class="container">
 			<div class="col-lg-6 col-lg-offset-3">

@@ -111,7 +111,7 @@ div fieldset img{
 	<!-- 탑메뉴 카테고리 -->
 	<div class="topMenu">
 	  <div>
-		<ul>
+		<ul> 
 			<li><a href=MainServlet>Home</a></li>
 			<li><a href="LoginUIServlet">Login</a></li>
 			<li><a href="JoinUIServlet">Join</a></li>

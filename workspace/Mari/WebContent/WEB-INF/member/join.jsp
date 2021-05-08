@@ -78,6 +78,13 @@ label {
 	border: 1px solid #f1f1f1;
 	width: 400px;
 	height: 10px;
+	color: skyblue;
+}
+
+#postSearch{
+	position:relative;
+	bottom: 4px;
+	right: 2px;
 }
 
 .addr-group button{
@@ -274,7 +281,8 @@ $(document).ready(function() {
 									<tr>
 									<td>
 									<input type="text" id="sample4_postcode" name="post" placeholder="우편번호" class="addr-control">
-									<button type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" name="post"class="addr-control2">우편번호 찾기</button><br>
+									<button type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" name="post"class="addr-control2">
+										<span id="postSearch">우편번호 찾기</span></button><br>
 									<input type="text" id="sample4_roadAddress" name="addr1" placeholder="도로명주소" class="addr-control2"><br>
 										<span id="guide" style="color:#999;display:none"></span>
 									<input type="text" id="sample4_detailAddress" name="addr2" placeholder="상세주소" class="addr-control2"> 
@@ -380,7 +388,7 @@ $(document).ready(function() {
                 document.getElementById('sample4_postcode').value = data.zonecode; //5자리 새우편번호 사용
                 document.getElementById('sample4_roadAddress').value = fullRoadAddr;
                 document.getElementById('sample4_jibunAddress').value = data.jibunAddress;
-
+                
                 // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
                 if(data.autoRoadAddress) {
                     //예상되는 도로명 주소에 조합형 주소를 추가한다.
