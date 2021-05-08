@@ -87,17 +87,11 @@ label {
 
 	$(document).ready(function() {
 		
-		<%
-			String mesg = (String)session.getAttribute("mesg");
-			System.out.println(mesg);
-		%>
 		
-		
-
 		//form 서브밋
 		$("form").on("submit", function() {
 			var userid = $("#userid").val();
-			var password = $("#password").val();
+			var passwd = $("#passwd").val();
 			if (userid.length == 0) {
 				swal({
 					title : 'Read the alert!',
@@ -111,7 +105,7 @@ label {
 				})//end swal
 				$("#userid").focus();
 				return false;
-			}if (password.length == 0) {
+			} else if(passwd.length == 0) {
 				swal({
 					title : 'Read the alert!',
 					text : '비밀번호를 확인해주세요',
@@ -122,28 +116,40 @@ label {
 						className : "btn btn-default"
 					}
 				})//end swal
+				$("#passwd").focus();
 				return false;
-			}if(<%=mesg%>){
-		
-				swal({
-					title : 'Read the alert!',
-					text : '아이디 및 비밀번호를 확인하세요!',
-					button : {
-						text : "OK",
-						value : true,
-						visible : true,
-						className : "btn btn-default"
-					}
-				})//end swal
-				return false;
+			} 
+			
 			
 		});//end submit
 		
 		
 	});//end fn
-	
 
 </script>
+<%
+	String mesg = (String)session.getAttribute("mesg");
+	System.out.println(mesg);
+	if(mesg != null){
+%>
+	<script>
+	
+	swal({
+		title : 'Read the alert!',
+		text : '아이디 및 비밀번호를 확인해주세요',
+		button : {
+			text : "OK",
+			value : true,
+			visible : true,
+			className : "btn btn-default"
+			}
+		});//end swal
+	
+	</script>
+<%
+	session.invalidate();
+}
+%>	
 </head>
 <body>
 	

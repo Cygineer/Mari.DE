@@ -42,7 +42,6 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("login", dto);//로그인정보저장
 	}else {//dto == null 회원이아닌경우
 		nextPage = "LoginUIServlet";
-		mesg = "아이디 및 비밀번호를 확인하세요";
 		session.setAttribute("mesg", mesg);
 	}
 	response.sendRedirect(nextPage);//페이지 두개 중 하나로 이동
