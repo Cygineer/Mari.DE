@@ -25,6 +25,7 @@ public class LoginServlet extends HttpServlet {
 
 	String userid = request.getParameter("userid");
 	String passwd = request.getParameter("passwd");
+	//System.out.println(userid+passwd);
 	
 	HashMap<String, String> map = new HashMap<String, String>();
 	map.put("userid", userid);
@@ -33,6 +34,7 @@ public class LoginServlet extends HttpServlet {
 	MemberService service = new MemberService();
 	MemberDTO dto = new MemberDTO();
 	dto = service.memberLogin(map);//login 인증
+	//System.out.println(dto);
 			
 	HttpSession session = request.getSession();
 	String nextPage = ""; //이동페이지저장

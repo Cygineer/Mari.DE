@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="com.dto.MemberDTO"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,12 +112,34 @@ div fieldset img{
 	<!-- 탑메뉴 카테고리 -->
 	<div class="topMenu">
 	  <div>
-		<ul> 
+		<ul>
+			<%
+				MemberDTO login = (MemberDTO)session.getAttribute("login");
+				System.out.println(login);
+				if(login != null){//로그인정보 있을때
+			%>
+		 
+			<li><a href=MainServlet>Home</a></li>
+			<li><a href="LogoutServlet">Logout</a></li>
+			<li><a href="#">Mypage</a></li>
+			<li><a href="#">Order</a></li>
+			<li><a href="#">Cart(3)</a></li>
+			
+			<%
+				}else{//로그인정보 없을때
+			%>
+			
 			<li><a href=MainServlet>Home</a></li>
 			<li><a href="LoginUIServlet">Login</a></li>
 			<li><a href="JoinUIServlet">Join</a></li>
 			<li><a href="#">Mypage</a></li>
 			<li><a href="#">Cart(3)</a></li>
+			
+			<%
+				}
+			%>
+			
+			
 			<li>
 				<form id="searchBarForm" action="#" method="get">
 							<fieldset>

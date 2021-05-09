@@ -147,7 +147,7 @@ label {
 	
 	</script>
 <%
-	session.invalidate();
+	session.removeAttribute(mesg);
 }
 %>	
 </head>
