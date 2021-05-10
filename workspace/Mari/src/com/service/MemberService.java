@@ -35,4 +35,18 @@ public class MemberService {
 		return dto;
 	}
 
+	public int memberidCheck(String userid) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		int count = 0;
+		try {
+			 MemberDAO dao = new MemberDAO();
+			count = dao.memberidCheck(session, userid);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return count;
+	}
+
 }

@@ -132,7 +132,7 @@ hr {
 	height: 20px;
 }
 
-#result{
+#result1,#result2{
 	font-size: 10px;
 	color: red;
 }
@@ -172,13 +172,13 @@ hr {
 $(document).ready(function() {
 
 	//form 서브밋
-	$("form").on("submit", function() {
+	$("form").on("submit", function(e) {
 		var userid = $("#userid").val();
 		var passwd = $("#passwd").val();
 		if (userid.length == 0 || passwd.length == 0 || username.length == 0 || birth.length == 0 || phone.length == 0 || email.length == 0) {
 			swal({
 				title : 'Read the alert!',
-				text : '내용을 입력해주세요',
+				text : '내용을 확인해주세요',
 				button : {
 					text : "OK",
 					value : true,
@@ -191,7 +191,7 @@ $(document).ready(function() {
 		}//end if
 	});//end submit
 	
-	$(passwd2).on("mouseout",function(){
+	$("#passwd2").on("mouseout",function(){
 		var pw = $("#passwd").val();
 		var pw2 = $(this).val();
 		var mesg = "";
@@ -199,10 +199,26 @@ $(document).ready(function() {
 			mesg = "비밀번호를 확인해주세요"
 			$(this).focus();
 		}
-			$("#result").text(mesg);
+			$("#result2").text(mesg);
 	});//end keyup
 	
-	///////////////////////////////////////////////////////////////////////
+	
+	$("#userid").on("keyup",function(event){	
+		 $.ajax({
+				type : "GET",
+				url : "IdCheckServlet",
+				dataType : "text",
+				data : {
+					userid : $("#userid").val()
+				},
+				success : function(responseData, status, xhr) {
+				    $("#result1").text(responseData);
+				},
+				error : function(xhr, status, error) {
+					console.log("error");
+				}
+			});//end ajax
+	});//end keyup
 	
 	
 	
@@ -222,13 +238,14 @@ $(document).ready(function() {
 
 					<h1>JOIN US</h1>
 
-					<form action="JoinServlet" role="form">
+					<form action="JoinServlet" role="form" method="get">
 						<div class="row">
 
 							<div class="col-lg-12 col-xs-12">
 								<label>가입정보 입력</label>
 								<div class="form-group">
 									<input type="text" name="userid" id="userid" class="form-control" placeholder="아이디">
+									<span id='result1'></span>
 								</div>
 							</div>
 
@@ -241,7 +258,7 @@ $(document).ready(function() {
 							<div class="col-lg-12 col-xs-12">
 								<div class="form-group">
 									<input type="password" name="passwd2" id="passwd2" class="form-control" placeholder="비밀번호 확인 ">
-										 <span id='result'></span>
+										 <span id='result2'></span>
 								</div>
 							</div>
 
