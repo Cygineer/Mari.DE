@@ -22,11 +22,11 @@ public class IdCheckServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String userid = request.getParameter("userid");
-		System.out.println("userid:    "+userid);
+		//System.out.println("userid:    "+userid);
 		
 		MemberService service = new MemberService();
 		int count = service.memberidCheck(userid);
-		System.out.println("IdCheckServlet count: "+ count);		
+		//System.out.println("IdCheckServlet count: "+ count);		
 		String mesg = "";
 		if(count==1) {
 		  mesg = "아이디 중복";	

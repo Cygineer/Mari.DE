@@ -2,6 +2,8 @@ package com.controller.member;
 
 import java.awt.List;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,14 +38,20 @@ public class JoinServlet extends HttpServlet {
 
 		MemberService service = new MemberService();
 		MemberDTO dto = new MemberDTO(userid, passwd, username, post, addr1, addr2, phone, email,birth);
-		System.out.println(userid+"\t"+passwd+"\t"+username+"\t"+post+"\t"+addr1+"\t"+addr2+"\t"+phone+"\t"+email);
+		//System.out.println(userid+"\t"+passwd+"\t"+username+"\t"+post+"\t"+addr1+"\t"+addr2+"\t"+phone+"\t"+email);
 		
 		
-		 int num = service.memberAdd(dto); System.out.println("실행된 레코드 갯수 :"+num); 
+		 int num = service.memberAdd(dto);
+		 //System.out.println("실행된 레코드 갯수 :"+num); 
 		 String mesg = "회원가입성공!";
 		 if(num != 0) {
-			 response.sendRedirect("MainServlet");
-			 session.setAttribute("memberAdd", mesg);
+			 	session.setAttribute("memberAdd", mesg);
+			 	response.setContentType("text/html;charset=UTF-8");
+				PrintWriter out = response.getWriter();
+				//html 설정없이 mesg값만 out
+				out.print(mesg);   //sucess 콘솔에 mesg을 출력
+				
+				response.sendRedirect("MainServlet");
 		 }
 		 
 		

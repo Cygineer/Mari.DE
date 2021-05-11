@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<script	src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-<script	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script	src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
@@ -171,8 +171,24 @@ hr {
 
 $(document).ready(function() {
 
-	//form 서브밋
-	$("form").on("submit", function(e) {
+	$("form").on("submit",function(){
+		
+		swal({
+			title : 'Read the alert!',
+			text : '회원가입성공!',
+			icon : 'success',
+			confirmButtonText : 'OK'
+			timer : 1500,
+			}).then((result) => {
+				if(result.isConfirmed){
+					$("form").attr("action", "JoinServlet");
+				}//end if
+			})//end then
+		
+	})//end submit
+	
+	//form click
+	$("#subBtn").on("click", function(e) {
 		var userid = $("#userid").val();
 		var passwd = $("#passwd").val();
 		if (userid.length == 0 || passwd.length == 0 || username.length == 0 || birth.length == 0 || phone.length == 0 || email.length == 0) {
@@ -189,7 +205,8 @@ $(document).ready(function() {
 			$(this).focus();
 			return false;
 		}//end if
-	});//end submit
+		
+	});//end click
 	
 	$("#passwd2").on("mouseout",function(){
 		var pw = $("#passwd").val();
@@ -200,7 +217,7 @@ $(document).ready(function() {
 			$(this).focus();
 		}
 			$("#result2").text(mesg);
-	});//end keyup
+	});//end mouseout
 	
 	
 	$("#userid").on("keyup",function(event){	
@@ -225,6 +242,7 @@ $(document).ready(function() {
 	
 	
 	
+	
 
 });//end fn
 </script>
@@ -238,7 +256,7 @@ $(document).ready(function() {
 
 					<h1>JOIN US</h1>
 
-					<form action="JoinServlet" role="form" method="get">
+					<form action="#" role="form" method="get">
 						<div class="row">
 
 							<div class="col-lg-12 col-xs-12">
@@ -353,7 +371,7 @@ $(document).ready(function() {
 
 
 							<div class="col-lg-12 col-xs-12">
-								<button type="submit" class="btn btn-default">
+								<button type="submit" class="btn btn-default" id="subBtn">
 									<span>회원가입</span>
 								</button>
 							</div>
