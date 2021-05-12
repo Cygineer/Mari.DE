@@ -177,7 +177,7 @@ $(document).ready(function() {
 			title : 'Read the alert!',
 			text : '회원가입성공!',
 			icon : 'success',
-			confirmButtonText : 'OK'
+			confirmButtonText : 'OK',
 			timer : 1500,
 			}).then((result) => {
 				if(result.isConfirmed){
