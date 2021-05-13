@@ -171,7 +171,7 @@ hr {
 
 $(document).ready(function() {
 
-	$("form").on("submit",function(){
+	/* $("form").on("submit",function(){
 		
 		swal({
 			title : 'Read the alert!',
@@ -185,7 +185,7 @@ $(document).ready(function() {
 				}//end if
 			})//end then
 		
-	})//end submit
+	})//end submit */
 	
 	//form click
 	$("#subBtn").on("click", function(e) {
@@ -256,7 +256,7 @@ $(document).ready(function() {
 
 					<h1>JOIN US</h1>
 
-					<form action="#" role="form" method="get">
+					<form action="JoinServlet" role="form" method="get">
 						<div class="row">
 
 							<div class="col-lg-12 col-xs-12">

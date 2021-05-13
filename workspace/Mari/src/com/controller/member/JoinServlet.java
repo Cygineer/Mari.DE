@@ -43,15 +43,9 @@ public class JoinServlet extends HttpServlet {
 		
 		 int num = service.memberAdd(dto);
 		 //System.out.println("실행된 레코드 갯수 :"+num); 
-		 String mesg = "회원가입성공!";
 		 if(num != 0) {
-			 	session.setAttribute("memberAdd", mesg);
-			 	response.setContentType("text/html;charset=UTF-8");
-				PrintWriter out = response.getWriter();
-				//html 설정없이 mesg값만 out
-				out.print(mesg);   //sucess 콘솔에 mesg을 출력
-				
-				response.sendRedirect("MainServlet");
+			 	session.setAttribute("join", dto);
+				response.sendRedirect("JoinSuccess");
 		 }
 		 
 		
