@@ -121,7 +121,7 @@ div fieldset img{
 		 
 			<li><a href=MainServlet>Home</a></li>
 			<li><a href="LogoutServlet">Logout</a></li>
-			<li><a href="#">Mypage</a></li>
+			<li><a href="MyPageServlet">Mypage</a></li>
 			<li><a href="#">Order</a></li>
 			<li><a href="#">Cart(3)</a></li>
 			
@@ -132,7 +132,7 @@ div fieldset img{
 			<li><a href=MainServlet>Home</a></li>
 			<li><a href="LoginUIServlet">Login</a></li>
 			<li><a href="JoinUIServlet">Join</a></li>
-			<li><a href="#">Mypage</a></li>
+			<li><a href="LoginUIServlet">Mypage</a></li>
 			<li><a href="#">Cart(3)</a></li>
 			
 			<%

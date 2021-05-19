@@ -8,9 +8,10 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/common/header/header.jsp" flush="true"></jsp:include>
-<div style="margin:40px 220px;"></div>
+<div style="margin:40px 220px"></div>
 <jsp:include page="/WEB-INF/common/nav/nav.jsp" flush="true"></jsp:include>
-<div style="margin:40px 220px;"></div>
-<jsp:include page="/WEB-INF/member/join.jsp" flush="true"></jsp:include>
+<div style="margin:40px 220px"></div>
+<jsp:include page="/WEB-INF/member/join.jsp" flush="true"></jsp:include><br>
+<jsp:include page="/WEB-INF/common/footer/footer.jsp"></jsp:include>
 </body>
 </html>

@@ -13,7 +13,8 @@
 </div>
 <jsp:include page="/WEB-INF/common/nav/nav.jsp" flush="true"></jsp:include>
 <div style="margin:40px 220px;">
-<jsp:include page="/WEB-INF/member/login.jsp" flush="true"></jsp:include>
+<jsp:include page="/WEB-INF/member/login.jsp" flush="true"></jsp:include><br>
+<jsp:include page="/WEB-INF/common/footer/footer.jsp"></jsp:include>
 
 </div>
 </body>

@@ -1,125 +1,91 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - Slick Slider Test</title>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css'>
-<link rel="stylesheet" href="./style.css">
-<style type="text/css">
-
-
-
-
-.wrapper{
-  width:90%;
-  padding-top: 0px;
-  text-align:center;
+<html>
+<title>W3.CSS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/lib/bootstrap.min.css">
+<link rel="stylesheet" href="/lib/w3.css">
+<script src="/lib/jquery-1.12.2.min.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+<style>
+.mySlides {
+	display:none
 }
-h2{
-  font-family:sans-serif;
-  color:#fff;
+	
+.w3-btn {
+	border-radius:50px;
+}	
+.w3-section{
+	position:relative;
+	bottom: 210px;
 }
-.carousel{
-  width:107%;
-  height:110%;
-  margin:0px auto;
-  left: 28px;
+.radio{
+	position:relative;
+	text-align:center;
+	left:13px;
+	bottom:50px;
 }
-carousel.div{
-	bottom: 20px;
+#left{
+	float: left;
+	left: 30px;
 }
-
-.slick-slide{
-  margin:10px;
+#right{
+	position:relative;
+	left: 60px;	
 }
-.slick-slide img{
-  width:130%;
-  height:500px;
-  border: 2px solid #fff;
-}
-
 
 </style>
-<!-- partial -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js'></script><script  src="./script.js"></script>
-<script type="text/javascript">
-
-$(document).ready(function(){
-	  $('.carousel').slick({
-	  slidesToShow: 4,
-	  slidesToScroll: 1,
-	  dots:true,
-	  centerMode: true,
-	  autoplay: true,
-	  autoplaySpeed: 2000,
-	  responsive: [
-	        {
-	          breakpoint: 1024,
-	          settings: {
-	            slidesToShow: 3,
-	            slidesToScroll: 1
-	          }
-	        },
-	        {
-	          breakpoint: 600,
-	          settings: {
-	            slidesToShow: 2,
-	            slidesToScroll: 1
-	          }
-	        },
-	        {
-	          breakpoint: 480,
-	          settings: {
-	            slidesToShow: 1,
-	            slidesToScroll: 1
-	          }
-	        }
-	      ]
-	  });
-	});
-
-</script>
-</head>
 <body>
 
+<div class="w3-content" style="max-width:800px">
+  <img class="mySlides" src="image/banner01.jpg" style="width:190%">
+  <img class="mySlides" src="image/banner02.jpg" style="width:190%">
+  <img class="mySlides" src="image/banner01.jpg" style="width:190%">
+</div>
+
+<div class="w3-center">
+  <div class="w3-section">
+     <a class="left carousel-control"><span id="left" class="glyphicon glyphicon-chevron-left" aria-hidden="true"  onclick="plusDivs(-1)"></span></a>
+     <a class="right carousel-control"><span id="right" class="glyphicon glyphicon-chevron-right" aria-hidden="true"  onclick="plusDivs(1)"></span></a>
+  </div>
+   <form role="form">
+    <div class="radio">
+      <label><input type="radio" name="optradio" class="w3-btn demo" onclick="currentDiv(1)"></label>    
+      <label><input type="radio" name="optradio" class="w3-btn demo" onclick="currentDiv(2)"></label>
+      <label><input type="radio" name="optradio" class="w3-btn demo" onclick="currentDiv(3)"></label>
+    </div>
+  </form>
+</div>
 
 
-	<!-- partial:index.partial.html -->
-	<div class="wrapper">
-		<div class="carousel">
-			<div>
-				<a href="#"> <img src="image/01.jfif">
-				</a>
-			</div>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
 
-			<div>
-				<a href="#"> <img src="image/02.png">
-				</a>
-			</div>
-			<div>
-				<a href="#"> <img src="image/03.jfif">
-				</a>
-			</div>
-			<div>
-				<a href="#"> <img src="image/04.jfif">
-				</a>
-			</div>
-			<div>
-				<a href="#"> <img src="image/05.png">
-				</a>
-			</div>
-			<div>
-				<a href="#"> <img src="image/06.jfif">
-				</a>
-			</div>
-		</div>
-	</div>
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
 
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
 
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-red", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-red";
+}
+</script>
 
 </body>
-</html>
-				                            
+</html> 

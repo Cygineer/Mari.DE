@@ -19,13 +19,18 @@
 
 .login {
 	font-family: 'Josefin Sans', sans-serif;
-	background: #f4f4f4;
-	padding: 70px 0px;
+	
 	width: auto;
 	height: auto;
 }
 
-h1 {
+.container{
+	background: #f4f4f4;
+	padding-bottom: 200px;
+}
+
+
+.title {
 	position: relative;
 	font-size: 25px;
 	font-weight: 600;
@@ -74,7 +79,7 @@ label {
 	color: #565656;
 	font-size: 14px;
 	padding: 20px 0px ;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 	border: 1px solid #f1f1f1;
 	width: 400px;
 	height: 10px;
@@ -97,6 +102,7 @@ label {
  .inner-form {
 	position: relative;
 	left: 78px;
+	top:100px;
 }
 
 .form-group input {
@@ -108,7 +114,30 @@ input{
 	height: 5px;
 }
 
-.btn {
+#xBtn {
+	position: relative;
+	background:skyblue;
+	filter: grayscale(40%);
+	color: #FFF;
+	border-radius: 6px;
+	margin: 0 auto;
+	height: 48px;
+	line-height: 38px;
+	display: table;
+	font-size: 15px;
+	width: 190px;
+	right: 175px;
+	border: 0;
+	outline: 0;
+}
+
+#xBtn:hover {
+	background: #FFF;
+	color:skyblue;
+	filter: grayscale(40%);
+}
+
+#subBtn {
 	position: relative;
 	background: orange;
 	filter: grayscale(40%);
@@ -119,13 +148,17 @@ input{
 	line-height: 38px;
 	display: table;
 	font-size: 15px;
-	width: 400px;
-	right: 70px;
+	width: 190px;
+	bottom: 47px;
+	left:35px;
+	border: 0;
+	outline: 0;
 }
 
-.btn:hover {
+#subBtn:hover {
 	background: #FFF;
-	border: 2px solid #24acb3;
+	color:orange;
+	filter: grayscale(40%);
 }
 
 hr {
@@ -135,6 +168,12 @@ hr {
 #result1,#result2{
 	font-size: 10px;
 	color: red;
+}
+
+.member{
+	position: relative;
+	left: 110px;
+	bottom: 30px;
 }
 /* 
 .agree {
@@ -186,6 +225,10 @@ $(document).ready(function() {
 			})//end then
 		
 	})//end submit */
+	
+	$("#xBtn").on("click",function(){
+		$(location).attr('href', 'MainServlet')
+	})//click
 	
 	//form click
 	$("#subBtn").on("click", function(e) {
@@ -254,7 +297,7 @@ $(document).ready(function() {
 			<div class="col-lg-6 col-lg-offset-3">
 				<div class="inner-form">
 
-					<h1>JOIN US</h1>
+					<h1 class="title">JOIN US</h1>
 
 					<form action="JoinServlet" role="form" method="get">
 						<div class="row">
@@ -371,11 +414,22 @@ $(document).ready(function() {
 
 
 							<div class="col-lg-12 col-xs-12">
+								<button type="button" class="btn btn-default" id="xBtn">
+									<span>취소</span>
+								</button>
 								<button type="submit" class="btn btn-default" id="subBtn">
 									<span>회원가입</span>
 								</button>
 							</div>
+	
+							<div class="col-lg-12 col-xs-12">
+								<div class="member">
+									<p>
+										Already a member? <a href="LoginUIServlet">Login</a>
+									</p>
 
+								</div>
+							</div>
 
 
 
