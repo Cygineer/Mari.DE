@@ -106,7 +106,7 @@ div fieldset img{
 
 <!-- 로고이미지 -->
 	<div class="logo">
-	<a href="MainServlet"><img src="image/logo.png"></a>
+	<a href="MainServlet"><img src="image/common/logo.png"></a>
 	</div>
 	
 	<!-- 탑메뉴 카테고리 -->
@@ -144,7 +144,7 @@ div fieldset img{
 				<form id="searchBarForm" action="#" method="get">
 							<fieldset>
 								<input id="keyword" name="keyword" value type="text">
-									<a href="#"><img alt="검색" src="image/Search-Button.png"></a>
+									<a href="#"><img alt="검색" src="image/common/Search-Button.png"></a>
 							</fieldset>
 				</form>
 			 </li>

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.dto.MemberDTO;
 import com.service.MemberService;
+import com.google.gson.Gson;
 
 /**
  * Servlet implementation class LoginServlet
@@ -23,6 +24,8 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+	HttpSession session = request.getSession();
+	
 	String userid = request.getParameter("userid");
 	String passwd = request.getParameter("passwd");
 	//System.out.println(userid+passwd);
@@ -35,16 +38,16 @@ public class LoginServlet extends HttpServlet {
 	MemberDTO dto = new MemberDTO();
 	dto = service.memberLogin(map);//login 인증
 	//System.out.println(dto);
+	
+
 			
-	HttpSession session = request.getSession();
 	String nextPage = ""; //이동페이지저장
-	String mesg ="";
 	if (dto != null) {//회원일경우
 		nextPage = "MainServlet";
 		session.setAttribute("login", dto);//로그인정보저장
 	}else {//dto == null 회원이아닌경우
+		
 		nextPage = "LoginUIServlet";
-		session.setAttribute("mesg", mesg);
 	}
 	response.sendRedirect(nextPage);//페이지 두개 중 하나로 이동
 	}

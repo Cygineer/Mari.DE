@@ -49,4 +49,15 @@ public class MemberService {
 		return count;
 	}
 
+	public MemberDTO loginCheck(String userid) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		MemberDTO dto = null;
+		try{
+        	dto =dao.loginCheck(session,userid);
+        }finally {
+        	session.close();
+        }
+		return dto;
+	}
+
 }

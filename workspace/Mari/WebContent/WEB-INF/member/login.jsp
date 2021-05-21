@@ -6,9 +6,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
@@ -83,6 +81,64 @@ label {
 	filter: grayscale(40%);
 }
 </style>
+
+
+</head>
+<body>
+	
+
+	<div class="login">
+		<div class="container">
+			<div class="col-lg-6 col-lg-offset-3">
+				<div class="inner-form">
+
+					<h1>Login</h1>
+
+					<form action="LoginServlet" role="form" method="post">
+						<div class="row">
+
+							<div class="col-lg-12 col-xs-12">
+								<div class="form-group">
+									<input type="text" name="userid" id="userid"
+										class="form-control" placeholder="아이디를 입력하세요">
+								</div>
+							</div>
+
+							<div class="col-lg-12 col-xs-12">
+								<div class="form-group">
+									<input type="password" name="passwd" id="passwd"
+										class="form-control" placeholder="비밀번호를 입력하세요">
+								</div>
+							</div>
+
+							<div class="col-lg-12 col-xs-12">
+								<button type="submit" class="btn btn-default">
+									<span>로그인</span>
+								</button>
+							</div>
+
+							<div class="col-lg-12 col-xs-12">
+								<div class="forgot">
+									<p>
+										Forgot Password or Email ? <a href="">click here!</a>
+									</p>
+
+								</div>
+							</div>
+
+						</div>
+					</form>
+
+				</div>
+				<!-- inner-form -->
+			</div>
+		</div>
+	</div>
+	
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
 <script type="text/javascript">
 
 	$(document).ready(function() {
@@ -121,85 +177,12 @@ label {
 			} 
 			
 			
+			
 		});//end submit
 		
 		
 	});//end fn
 
 </script>
-<%
-	String mesg = (String)session.getAttribute("mesg");
-	System.out.println(mesg);
-	if(mesg != null){
-%>
-	<script>
-	
-	swal({
-		title : 'Read the alert!',
-		text : '아이디 및 비밀번호를 확인해주세요',
-		button : {
-			text : "OK",
-			value : true,
-			visible : true,
-			className : "btn btn-default"
-			}
-		});//end swal
-	
-	</script>
-<%
-	session.invalidate();
-}
-%>	
-</head>
-<body>
-	
-
-	<div class="login">
-		<div class="container">
-			<div class="col-lg-6 col-lg-offset-3">
-				<div class="inner-form">
-
-					<h1>Login</h1>
-
-					<form action="LoginServlet" role="form">
-						<div class="row">
-
-							<div class="col-lg-12 col-xs-12">
-								<div class="form-group">
-									<input type="userid" name="userid" id="userid"
-										class="form-control" placeholder="아이디를 입력하세요">
-								</div>
-							</div>
-
-							<div class="col-lg-12 col-xs-12">
-								<div class="form-group">
-									<input type="password" name="passwd" id="passwd"
-										class="form-control" placeholder="비밀번호를 입력하세요">
-								</div>
-							</div>
-
-							<div class="col-lg-12 col-xs-12">
-								<button type="submit" class="btn btn-default">
-									<span>로그인</span>
-								</button>
-							</div>
-
-							<div class="col-lg-12 col-xs-12">
-								<div class="forgot">
-									<p>
-										Forgot Password or Email ? <a href="">click here!</a>
-									</p>
-
-								</div>
-							</div>
-
-						</div>
-					</form>
-
-				</div>
-				<!-- inner-form -->
-			</div>
-		</div>
-	</div>
 </body>
 </html>

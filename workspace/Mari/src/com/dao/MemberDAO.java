@@ -23,4 +23,9 @@ public class MemberDAO {
 		return count;
 	}
 
+	public MemberDTO loginCheck(SqlSession session, String userid) {
+		MemberDTO dto = session.selectOne("MemberMapper.loginCheck", userid);
+		return dto;
+	}
+
 }

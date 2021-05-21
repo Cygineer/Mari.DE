@@ -38,9 +38,9 @@
 <body>
 
 <div class="w3-content" style="max-width:800px">
-  <img class="mySlides" src="image/banner01.jpg" style="width:190%">
-  <img class="mySlides" src="image/banner02.jpg" style="width:190%">
-  <img class="mySlides" src="image/banner01.jpg" style="width:190%">
+  <img class="mySlides" src="image/common/banner01.jpg" style="width:190%">
+  <img class="mySlides" src="image/common/banner02.jpg" style="width:190%">
+  <img class="mySlides" src="image/common/banner01.jpg" style="width:190%">
 </div>
 
 <div class="w3-center">
