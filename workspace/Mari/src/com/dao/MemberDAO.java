@@ -28,4 +28,9 @@ public class MemberDAO {
 		return dto;
 	}
 
+	public int infoUpdate(SqlSession session, MemberDTO dto2) {
+		 int n = session.update("MemberMapper.infoUpdate", dto2);
+		   return n;
+	}
+
 }

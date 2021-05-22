@@ -26,4 +26,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 select * from member where userid = #{userid}
 	</select>
 	
+	<update id="infoUpdate" parameterType="MemberDTO">
+	 update member set
+	 username = #{username},
+	 birth = #{birth},
+     phone = #{phone},
+	 post = #{post},
+     email = #{email},
+     addr1 = #{addr1},
+     addr2 = #{addr2}
+  	  where userid = #{userid}
+	</update>
+	
 </mapper>

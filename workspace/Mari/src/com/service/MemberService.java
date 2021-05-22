@@ -60,4 +60,17 @@ public class MemberService {
 		return dto;
 	}
 
+	public int infoUpdate(MemberDTO dto2) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		  int n = 0;
+		  try {
+			  MemberDAO dao = new MemberDAO();
+			  n = dao.infoUpdate(session, dto2);
+			  session.commit();
+		  }finally {
+			session.close();
+		}
+		  return n;
+	   }//end memberUpdate
+
 }

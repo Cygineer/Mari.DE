@@ -10,5 +10,6 @@
 <jsp:include page="/WEB-INF/common/header/header.jsp"></jsp:include><br><br>
 <jsp:include page="/WEB-INF/common/nav/nav.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/member/info.jsp"></jsp:include>
+
 </body>
 </html>
