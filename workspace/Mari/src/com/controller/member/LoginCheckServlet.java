@@ -38,13 +38,13 @@ public class LoginCheckServlet extends HttpServlet {
 		Gson gson = new Gson();
 		
 		String nextPage = "";
-		
+		String json = "";
 		if (dto.getUserid().equals(userid) && dto.getPasswd().equals(passwd)) {//아이디와 패스워드가 일치하는경우
 			data.put("login",dto);
-	        String json = gson.toJson(data);
+	        json = gson.toJson(data);
 	        nextPage = "MainServlet";
 		}
-		String json = gson.toJson(data);
+		json = gson.toJson(data);
 		response.sendRedirect(nextPage);
 
 		response.setCharacterEncoding("UTF-8");

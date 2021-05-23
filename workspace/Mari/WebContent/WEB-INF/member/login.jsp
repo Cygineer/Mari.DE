@@ -112,7 +112,7 @@ label {
 							</div>
 
 							<div class="col-lg-12 col-xs-12">
-								<button type="submit" class="btn btn-default">
+								<button type="submit" id="login" class="btn btn-default">
 									<span>로그인</span>
 								</button>
 							</div>
@@ -144,14 +144,14 @@ label {
 	$(document).ready(function() {
 		
 		
-		//form 서브밋
-		$("form").on("submit", function() {
+		//login click
+		$("#login").on("click", function() {
 			var userid = $("#userid").val();
 			var passwd = $("#passwd").val();
 			if (userid.length == 0) {
 				swal({
 					title : 'Read the alert!',
-					text : '아이디를 확인해주세요',
+					text : '아이디를 입력해주세요',
 					button : {
 						text : "OK",
 						value : true,
@@ -164,7 +164,7 @@ label {
 			} else if(passwd.length == 0) {
 				swal({
 					title : 'Read the alert!',
-					text : '비밀번호를 확인해주세요',
+					text : '비밀번호를 입력해주세요',
 					button : {
 						text : "OK",
 						value : true,
@@ -174,7 +174,40 @@ label {
 				})//end swal
 				$("#passwd").focus();
 				return false;
-			} 
+				/*
+				} else if (userid.length != 0 && passwd.length != 0) {
+				$.ajax({
+					type:"post",
+					url:"LoginCheckServlet",
+					data:{
+						"userid":$('#userid').val(),
+						"passwd":$('#passwd').val(),
+					},
+					 dataType: "json",
+		             contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+		             success : function(data, status, xhr) {
+		            	 for ( var i in data.login) {
+		                        var login = data.login[i];
+							if(login == null){
+							swal({
+								title : 'Read the alert!',
+								text : '아이디 및 비밀번호가 일치하지 않습니다.',
+								button : {
+									text : "OK",
+									value : true,
+									visible : true,
+									className : "btn btn-default"
+								}
+							})//end swal
+						}//if
+							}
+					},
+					error:function(){
+					}
+				});//ajax
+				*/
+				
+			}//else
 			
 			
 			
