@@ -9,6 +9,7 @@
 <!--  typealias 등록 -->
 <typeAliases>
 	<typeAlias type="com.dto.MemberDTO" alias="MemberDTO"></typeAlias><!-- Alias추가  -->
+	<typeAlias type="com.dto.GoodsDTO" alias="GoodsDTO"></typeAlias><!-- Alias추가  -->
 </typeAliases>
 
   <environments default="development">
@@ -25,6 +26,7 @@
   
   <mappers>
     <mapper resource="com/config/MemberMapper.xml"/>
+    <mapper resource="com/config/GoodsMapper.xml"/>
   </mappers>
 </configuration>
 

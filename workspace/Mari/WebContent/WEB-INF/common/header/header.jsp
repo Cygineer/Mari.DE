@@ -16,12 +16,16 @@ html, body{
 		margin: 0;
 		width: 100%;
 		height: 100%;
-		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-   		font-size: 14px;
-   		color: #337ab7;
+		
    		line-height: 1.42857143;
    		-webkit-text-size-adjust: 100%;
 	}
+.category{
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+   		font-size: 14px;
+   		color: #337ab7;
+}
+	
 header { /*헤더 사이즈 늘림 */
 	height: 150px;
 	
@@ -119,21 +123,21 @@ div fieldset img{
 				if(login != null){//로그인정보 있을때
 			%>
 		 
-			<li><a href=MainServlet>Home</a></li>
-			<li><a href="LogoutServlet">Logout</a></li>
-			<li><a href="MyPageServlet">Mypage</a></li>
-			<li><a href="#">Order</a></li>
-			<li><a href="#">Cart(3)</a></li>
+			<li><a href=MainServlet class="category">Home</a></li>
+			<li><a href="LogoutServlet" class="category">Logout</a></li>
+			<li><a href="MyPageServlet" class="category">Mypage</a></li>
+			<li><a href="#" class="category">Order</a></li>
+			<li><a href="#" class="category">Cart(3)</a></li>
 			
 			<%
 				}else{//로그인정보 없을때
 			%>
 			
-			<li><a href=MainServlet>Home</a></li>
-			<li><a href="LoginUIServlet">Login</a></li>
-			<li><a href="JoinUIServlet">Join</a></li>
-			<li><a href="LoginUIServlet">Mypage</a></li>
-			<li><a href="#">Cart(3)</a></li>
+			<li><a href=MainServlet class="category">Home</a></li>
+			<li><a href="LoginUIServlet" class="category">Login</a></li>
+			<li><a href="JoinUIServlet" class="category">Join</a></li>
+			<li><a href="LoginUIServlet" class="category">Mypage</a></li>
+			<li><a href="#" class="category">Cart(3)</a></li>
 			
 			<%
 				}

@@ -6,8 +6,7 @@ public class GoodsDTO {
 	 String gcode;
 	 String gcategory;
 	 String gname;
-	 String gcontent;
-	 int gprice;
+	 String gprice;
 	 String gimage;
 	 
 	public GoodsDTO() {
@@ -15,20 +14,21 @@ public class GoodsDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public GoodsDTO(String gcode, String gcategory, String gname, String gcontent, int gprice, String gimage) {
+	public GoodsDTO(String gcode, String gcategory, String gname, String gcontent, String gprice, String gimage) {
 		super();
 		this.gcode = gcode;
 		this.gcategory = gcategory;
 		this.gname = gname;
-		this.gcontent = gcontent;
 		this.gprice = gprice;
 		this.gimage = gimage;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "GoodsDTO [gcode=" + gcode + ", gcategory=" + gcategory + ", gname=" + gname + ", gcontent=" + gcontent
-				+ ", gprice=" + gprice + ", gimage=" + gimage + "]";
+		return "GoodsDTO [gcode=" + gcode + ", gcategory=" + gcategory + ", gname=" + gname + ", gprice=" + gprice
+				+ ", gimage=" + gimage + "]";
 	}
 
 	public String getGcode() {
@@ -55,19 +55,11 @@ public class GoodsDTO {
 		this.gname = gname;
 	}
 
-	public String getGcontent() {
-		return gcontent;
-	}
-
-	public void setGcontent(String gcontent) {
-		this.gcontent = gcontent;
-	}
-
-	public int getGprice() {
+	public String getGprice() {
 		return gprice;
 	}
 
-	public void setGprice(int gprice) {
+	public void setGprice(String gprice) {
 		this.gprice = gprice;
 	}
 
@@ -78,6 +70,8 @@ public class GoodsDTO {
 	public void setGimage(String gimage) {
 		this.gimage = gimage;
 	}
+
+	
 	
 	
 	

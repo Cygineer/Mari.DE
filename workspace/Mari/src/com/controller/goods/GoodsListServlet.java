@@ -1,6 +1,8 @@
 package com.controller.goods;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dto.GoodsDTO;
+import com.google.gson.Gson;
 import com.service.GoodsService;
 
 /**
@@ -24,16 +27,30 @@ public class GoodsListServlet extends HttpServlet {
 
 		String gcategory = request.getParameter("gcategory");
 		if(gcategory==null) {
-			gcategory = "all";
+			gcategory = "ring";
 		}
+		String name = "items";
 		GoodsService service = new GoodsService();
 		List<GoodsDTO> list = service.goodsList(gcategory);
-		
 		
 		request.setAttribute("goodsList", list);
 		
 		RequestDispatcher dis = request.getRequestDispatcher("main.jsp");
 		dis.forward(request, response);
+		
+		/*
+		HashMap<String, List<GoodsDTO>> data = new HashMap<String, List<GoodsDTO>>();
+		data.put(name, list);
+		Gson gson = new Gson();
+
+	    String json = gson.toJson(data);
+
+	    response.setCharacterEncoding("UTF-8");
+	    PrintWriter out = response.getWriter();
+	     out.println(json);
+		*/
+		
+		
 	
 	
 	}
