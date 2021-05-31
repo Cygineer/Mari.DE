@@ -26,10 +26,11 @@ public class GoodsListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String gcategory = request.getParameter("gcategory");
+		System.out.println("GoddsListServlet===="+gcategory);
 		if(gcategory==null) {
 			gcategory = "ring";
 		}
-		String name = "items";
+		//String name = "items";
 		GoodsService service = new GoodsService();
 		List<GoodsDTO> list = service.goodsList(gcategory);
 		

@@ -13,6 +13,12 @@
 	margin-right: 25px;
 	margin-bottom: 60px;
 }
+.gimage {
+  transition: all 0.2s linear;
+}
+.gimage:hover  {
+  transform: scale(1.05);
+}
 
 
 </style>
@@ -53,13 +59,13 @@
 								<tr>
 									<td>
 										<a href=""><!-- 이미지링크 --> 
-											<img src="image/goods/<%=gimage %>.PNG" border="0" align="center" width="300">
+											<img src="image/goods/<%=gimage %>.PNG" border="0" align="center" width="300" class="gimage">
 										</a>
 									</td>
 								</tr>
 								<tr>
 								
-									<td height="10">
+									<td height="20">
 								</tr>
 								<tr>
 									<td class= "td_default" align ="center">

@@ -69,8 +69,8 @@ html, body{
 			<li class="nav-item"><a href="#">Best10</a></li>
 			<li class="nav-item"><a href="#">Earring</a></li>
 			<li class="nav-item"><a href="#">Necklace</a></li>
-			<li class="nav-item"><a href="#">Bracelet</a></li>
-			<li class="nav-item"><a href="#">Ring</a></li>
+			<li class="nav-item"><a href="GoodsListServlet?gcategory=bracelet">Bracelet</a></li>
+			<li class="nav-item"><a href="GoodsListServlet?gcategory=ring">Ring</a></li>
 			<li class="nav-item"><a href="#">Event</a></li>
 			<li class="nav-item"><a href="#">Q&A</a></li>
 		</ul>
