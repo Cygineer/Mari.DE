@@ -64,14 +64,20 @@ html, body{
 
 	<nav>
 		<ul class="nav-container">
-			<li class="nav-item"><a href="#">New5%</a></li>
+			<!-- <li class="nav-item"><a href="#">New5%</a></li> -->
 			<li class="nav-item"><a href="#">All</a></li>
-			<li class="nav-item"><a href="#">Best10</a></li>
-			<li class="nav-item"><a href="#">Earring</a></li>
-			<li class="nav-item"><a href="#">Necklace</a></li>
+			<li><a></a></li>
+			<!-- <li class="nav-item"><a href="#">Best10</a></li> -->
+			<li class="nav-item"><a href="GoodsListServlet?gcategory=earring">Earring</a></li>
+			<li><a></a></li>
+			<li class="nav-item"><a href="GoodsListServlet?gcategory=necklace">Necklace</a></li>
+			<li><a></a></li>
 			<li class="nav-item"><a href="GoodsListServlet?gcategory=bracelet">Bracelet</a></li>
+			<li><a></a></li>
 			<li class="nav-item"><a href="GoodsListServlet?gcategory=ring">Ring</a></li>
-			<li class="nav-item"><a href="#">Event</a></li>
+			<li><a></a></li>
+			<li class="nav-item"><a href="BbsServlet">Notice</a></li>
+			<li><a></a></li>
 			<li class="nav-item"><a href="#">Q&A</a></li>
 		</ul>
 	</nav>
